@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css'
 
 import Footer from './components/Home/Footer'
 import Floor from './components/Home/Floor'
+import OrbitControls from './components/OrbitControls'
 
 import { LightBulb, Box } from './components/Geometries'
 
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
             <ambientLight color={"white"} intensity={0.2} />
             <LightBulb position={[0, 3, 0]} />
             <Box rotateX={3} rotateY={0.2} />
+            <OrbitControls />
             <Floor position={[0, -1, 0]} />
         </Canvas>
       </main>

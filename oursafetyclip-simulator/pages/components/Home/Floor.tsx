@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 
-interface FloorProps {
+interface ObjectProps {
   position: [number, number, number]
 }
 
-const Floor: NextPage<FloorProps> = (props) => {
+const Floor: NextPage<ObjectProps> = (props) => {
   return (
-    <mesh {...props} recieveShadow={true}>
+    <mesh {...props} receiveShadow={true}>
       <boxBufferGeometry args={[20,1,10]} />
       <meshPhysicalMaterial color='white' />
     </mesh>

@@ -9,6 +9,8 @@ import styles from '../styles/Home.module.css'
 import Footer from './components/Home/Footer'
 import Floor from './components/Home/Floor'
 
+import { LightBulb, Box } from './components/Geometries'
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -26,8 +28,10 @@ const Home: NextPage = () => {
             position: [-6, 7, 7],
           }}
         >
-          <ambientLight color={"white"} intensity={0.3} />
-          <Floor position={[0, -1, 0]} />
+            <ambientLight color={"white"} intensity={0.2} />
+            <LightBulb position={[0, 3, 0]} />
+            <Box rotateX={3} rotateY={0.2} />
+            <Floor position={[0, -1, 0]} />
         </Canvas>
       </main>
 

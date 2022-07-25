@@ -1,6 +1,6 @@
-# OurSafetyClip-Simulator
+# OurSafetyClip Simulator
 
-A web app that demonstrates the usage of an OurSafetyClip device.
+A web app that demonstrates the usage of an **OurSafetyClip** device.
 
 ## Dependencies
 - NextJS

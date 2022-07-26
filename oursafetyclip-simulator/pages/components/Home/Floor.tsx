@@ -7,8 +7,8 @@ interface ObjectProps {
 const Floor: NextPage<ObjectProps> = (props) => {
   return (
     <mesh {...props} receiveShadow={true}>
-      <boxBufferGeometry args={[20,1,10]} />
-      <meshPhysicalMaterial color='white' />
+      <boxBufferGeometry args={[20,0.5,10]} />
+      <meshBasicMaterial color='white' transparent={true} opacity={0.5} />
     </mesh>
   );
 }

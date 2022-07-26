@@ -10,7 +10,7 @@ import Footer from './components/Home/Footer'
 import Floor from './components/Home/Floor'
 import { Controls } from './components/Geometries'
 
-import Box, { LightBulb } from './components/Geometries'
+import ClipModel, { LightBulb } from './components/Geometries'
 
 const Home: NextPage = () => {
   return (
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           >
               <ambientLight color={"white"} intensity={0.2} />
               <LightBulb position={[0, 3, 0]} />
-              <Box rotateX={3} rotateY={0.2} />
+              <ClipModel rotateX={Math.PI / 2}/>
               <Controls />
               <Floor position={[0, -1, 0]} />
           </Canvas>

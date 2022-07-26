@@ -5,6 +5,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 import { ReactThreeFiber } from '@react-three/fiber'
 
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { useLoader } from '@react-three/fiber'
+
 extend({ OrbitControls })
 
 declare global {
@@ -26,13 +29,13 @@ export const Controls: NextPage = () => {
   return <orbitControls attach={"orbitControls"}  args={[camera, gl.domElement]} />
 }
 
-const Box: NextPage<ObjectProps> = (props) => {
-    return (
-      <mesh {...props} receiveShadow={true} castShadow={true}>
-        <boxBufferGeometry />
-        <meshPhysicalMaterial color={"white"} />
-      </mesh>
-    )
+const ClipModel: NextPage<ObjectProps> = (props) => {
+  const obj = useLoader(OBJLoader, '/detatched.obj')
+  return (
+    <mesh {...props} receiveShadow={true} castShadow={true}>
+      <primitive object={obj} />
+    </mesh>
+  )
 }
 
 export const LightBulb: NextPage<ObjectProps> = (props) => {
@@ -43,4 +46,4 @@ export const LightBulb: NextPage<ObjectProps> = (props) => {
   )
 }
 
-export default Box
+export default ClipModel

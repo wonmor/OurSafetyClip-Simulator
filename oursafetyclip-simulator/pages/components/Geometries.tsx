@@ -1,8 +1,32 @@
 import type { NextPage } from 'next'
 
-import { ObjectProps } from './Globals'
+import { extend, useThree } from "@react-three/fiber"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
-export const Box: NextPage<ObjectProps> = (props) => {
+import { ReactThreeFiber } from '@react-three/fiber'
+
+extend({ OrbitControls })
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      orbitControls: ReactThreeFiber.Object3DNode<OrbitControls, typeof OrbitControls>
+    }
+  }
+}
+
+interface ObjectProps {
+  position?: [number, number, number]
+  rotateX?: any
+  rotateY?: any
+}
+
+export const Controls: NextPage = () => {
+  const { camera, gl } = useThree();
+  return <orbitControls attach={"orbitControls"}  args={[camera, gl.domElement]} />
+}
+
+const Box: NextPage<ObjectProps> = (props) => {
     return (
       <mesh {...props} receiveShadow={true} castShadow={true}>
         <boxBufferGeometry />
@@ -18,3 +42,5 @@ export const LightBulb: NextPage<ObjectProps> = (props) => {
     </mesh>
   )
 }
+
+export default Box

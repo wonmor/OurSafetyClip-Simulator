@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/35755386/181419345-25ee5015-92fb-41f8-bf86-ccb8381438af.png)
+<img width="1200" alt="logo" src="https://user-images.githubusercontent.com/35755386/181419345-25ee5015-92fb-41f8-bf86-ccb8381438af.png">
 
 A web app that demonstrates the usage of an **OurSafetyClip** device.
 

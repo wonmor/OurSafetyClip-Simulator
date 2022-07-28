@@ -41,6 +41,14 @@ export const Controls: NextPage = () => {
   return <orbitControls attach={"orbitControls"}  args={[camera, gl.domElement]} />
 }
 
+export const LightBulb: NextPage<ObjectProps> = (props) => {
+  return (
+    <mesh {...props} >
+      <pointLight castShadow />
+    </mesh>
+  )
+}
+
 const ClipModel: NextPage<ObjectProps> = (props) => {
   const ref: GenericRef = useRef()
   const obj = useLoader(OBJLoader, `${server}/detatched.obj`)
@@ -55,14 +63,6 @@ const ClipModel: NextPage<ObjectProps> = (props) => {
   return (
     <mesh {...props} receiveShadow={true} castShadow={true}>
       <primitive ref={ref} object={obj} />
-    </mesh>
-  )
-}
-
-export const LightBulb: NextPage<ObjectProps> = (props) => {
-  return (
-    <mesh {...props} >
-      <pointLight castShadow />
     </mesh>
   )
 }

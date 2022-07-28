@@ -2,7 +2,7 @@
 
 A web app that demonstrates the usage of an **OurSafetyClip** device.
 
-### [Launch Website](https://oursafetyclip-simulator-gcw8tfr35-wonmor.vercel.app)
+### [Launch Website](oursafetyclip-simulator.vercel.app)
 
 ## Dependencies
 - NextJS

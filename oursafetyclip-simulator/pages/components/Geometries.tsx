@@ -1,5 +1,9 @@
 import type { NextPage } from 'next'
 
+import * as THREE from 'three'
+
+import { useRef } from 'react'
+
 import { extend, useThree } from "@react-three/fiber"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
@@ -7,6 +11,7 @@ import { ReactThreeFiber } from '@react-three/fiber'
 
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { useLoader } from '@react-three/fiber'
+import { Vector3 } from 'three'
 
 extend({ OrbitControls })
 
@@ -22,6 +27,7 @@ interface ObjectProps {
   position?: [number, number, number]
   rotateX?: any
   rotateY?: any
+  scale?: any
 }
 
 export const Controls: NextPage = () => {
@@ -31,6 +37,7 @@ export const Controls: NextPage = () => {
 
 const ClipModel: NextPage<ObjectProps> = (props) => {
   const obj = useLoader(OBJLoader, '/detatched.obj')
+
   return (
     <mesh {...props} receiveShadow={true} castShadow={true}>
       <primitive object={obj} />

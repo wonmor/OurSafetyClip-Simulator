@@ -34,9 +34,8 @@ const Home: NextPage = () => {
           >
               <ambientLight color={"white"} intensity={0.2} />
               <LightBulb position={[0, 3, 0]} />
-              <ClipModel rotateX={Math.PI / 2}/>
+              <ClipModel rotateX={Math.PI / 2} scale={[0.1,0.1,0.1]} />
               <Controls />
-              <Floor position={[0, -1, 0]} />
           </Canvas>
           </div>
       </main>

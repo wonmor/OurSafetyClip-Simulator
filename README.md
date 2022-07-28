@@ -7,9 +7,9 @@ A web app that demonstrates the usage of an **OurSafetyClip** device.
 ---
 
 ## Dependencies
-- NextJS
-- Tailwind CSS
-- React Three Fiber
+- **NextJS**: Web Framework Built with Node.js
+- **Tailwind CSS**: Utility-first Cascading Style Sheets Library
+- **React Three Fiber**: WebGL-based 3D Rendering for Javascript/Typescript
 
 ---
 

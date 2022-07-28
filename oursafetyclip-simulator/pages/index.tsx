@@ -14,7 +14,7 @@ import ClipModel, { LightBulb } from './components/Geometries'
 
 const dev = process.env.NODE_ENV !== 'production'
 
-export const server = dev ? 'http://localhost:3000' : 'https://oursafetyclip-simulator-r00bc72xj-wonmor.vercel.app'
+export const server = dev ? 'http://localhost:3000' : 'https://oursafetyclip-simulator.vercel.app'
 
 const Home: NextPage = () => {
   return (

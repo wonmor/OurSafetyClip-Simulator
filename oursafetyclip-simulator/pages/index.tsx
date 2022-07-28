@@ -7,10 +7,14 @@ import styles from '../styles/Home.module.css'
 
 import Header from './components/Home/Header'
 import Footer from './components/Home/Footer'
-import Floor from './components/Home/Floor'
+
 import { Controls } from './components/Geometries'
 
 import ClipModel, { LightBulb } from './components/Geometries'
+
+const dev = process.env.NODE_ENV !== 'production'
+
+export const server = dev ? 'http://localhost:3000' : 'https://oursafetyclip-simulator-r00bc72xj-wonmor.vercel.app'
 
 const Home: NextPage = () => {
   return (

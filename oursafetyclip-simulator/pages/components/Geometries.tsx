@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useEffect, useRef } from 'react'
 
 import { extend, useThree } from "@react-three/fiber"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
@@ -27,17 +28,32 @@ interface ObjectProps {
   scale?: any
 }
 
+interface GenericRef {
+  current?: {
+    rotation?: {
+      x?: any
+    }
+  }
+}
+
 export const Controls: NextPage = () => {
   const { camera, gl } = useThree();
   return <orbitControls attach={"orbitControls"}  args={[camera, gl.domElement]} />
 }
 
 const ClipModel: NextPage<ObjectProps> = (props) => {
+  const ref: GenericRef = useRef()
   const obj = useLoader(OBJLoader, `${server}/detatched.obj`)
+
+  useEffect(() => {
+    if (ref.current?.rotation) {
+      ref.current.rotation.x += -360
+    }
+  })
 
   return (
     <mesh {...props} receiveShadow={true} castShadow={true}>
-      <primitive object={obj} />
+      <primitive ref={ref} object={obj} />
     </mesh>
   )
 }

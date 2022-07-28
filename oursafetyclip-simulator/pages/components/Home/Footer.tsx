@@ -10,7 +10,7 @@ const Footer: NextPage = () => {
             target="_blank"
             rel="noopener noreferrer"
             >
-            <span>Developed by <b>John Seong</b>. Served under the <b>MIT License</b>.</span>
+            <span className="text-center">Developed by <b>John Seong</b>. Served under the <b>MIT License</b>.</span>
             </a>
         </footer>
     )

@@ -45,6 +45,7 @@ const ClipModel: NextPage<ObjectProps> = (props) => {
   const ref: GenericRef = useRef()
   const obj = useLoader(OBJLoader, `${server}/detatched.obj`)
 
+  // Only runs once upon DOM start...
   useEffect(() => {
     if (ref.current?.rotation) {
       ref.current.rotation.x += -360

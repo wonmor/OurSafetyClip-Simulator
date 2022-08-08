@@ -2,7 +2,7 @@
 
 A web app that demonstrates the usage of an **OurSafetyClip** device.
 
-### [Launch Website](oursafetyclip-simulator.vercel.app)
+### [Launch Website](https://oursafetyclip-simulator.vercel.app)
 
 ---
 
